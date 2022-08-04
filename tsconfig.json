@@ -1,17 +1,25 @@
 {
+    "include": ["src/**/*", "./webpack.config.ts"],
     "compilerOptions": {
-        "outDir": "./build",
-        "declarationDir": "./build",
+        "lib": ["dom", "dom.iterable", "esnext"],
         "module": "commonjs",
-        "target": "esnext",
-        "declaration": true,
-        "sourceMap": true,
-        "experimentalDecorators": true,
-        "alwaysStrict": true,
-        "strict": true,
-        "resolveJsonModule": true,
-        "removeComments": false
+        "target": "es5",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "jsx": "react",
+        "moduleResolution": "nodenext",
+        "noFallthroughCasesInSwitch": true,
+        "skipLibCheck": true,
+        "strict": true
     },
-    "include": ["src/**/*.ts"],
-    "exclude": ["node_modules", "dist"]
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
 }
